@@ -4,7 +4,7 @@ import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
-public class Result implements ITestListener{
+public class Result implements ITestListener,IAutoConst{
 static int passCount=0,failCount=0;
 	@Override
 	public void onTestStart(ITestResult result) {
@@ -44,7 +44,7 @@ static int passCount=0,failCount=0;
 
 	@Override
 	public void onFinish(ITestContext context) {
-		Utility.writeResultToXL("./result/summary.xlsx", "sheet1", passCount, failCount);
+		Utility.writeResultToXL(SUMMARY_PATH, "sheet1", passCount, failCount);
 	}
 
 }
