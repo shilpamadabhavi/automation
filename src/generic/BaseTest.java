@@ -11,12 +11,17 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.ITestResult;
+import org.testng.Reporter;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
 @Listeners(Result.class)
 abstract public class BaseTest implements IAutoConst {
-	
+//dont make driver as static it will not run multiple browser when we excecute through selenium 
+//grid
 	public WebDriver driver;
 	public String url=Utility.getPropertyValue(CONFIG_PATH, "URL");//dont make url as static bcz its keep changing
 	String ITO=Utility.getPropertyValue(CONFIG_PATH, "ITO");
@@ -26,18 +31,33 @@ abstract public class BaseTest implements IAutoConst {
 		System.setProperty(chrome_key,chrome_value);
 		System.setProperty(gecko_key, gecko_value);
 	}
-	
-	@BeforeMethod
-public void openApplication()
+	@Parameters({"ip","browser"})
+	@BeforeMethod(alwaysRun=true)
+public void openApplication(@Optional("localhost")String ip,@Optional( "chrome")String browser)
 {
-	driver=new ChromeDriver();
+//	driver=new ChromeDriver();
+	driver=Utility.openBrowser(driver,ip ,browser);
 	driver.manage().timeouts().implicitlyWait(duration, TimeUnit.SECONDS);
 	driver.get(url);
+		
 	
 }
 	@AfterMethod
-	public void closeApplication()
+	public void closeApplication(ITestResult result)
 	{
-		driver.close();
+		String name = result.getName();
+		int status = result.getStatus();//1=pass 2=fail 3=skip
+		if(status==2)
+		{
+			//whenever test will fail we need to take the screen shot
+			String path = Utility.getPhoto(driver, PHOTO_PATH);
+			Reporter.log("Test:"+name+"is failed &photo is:"+path,true);
+		}
+		else
+		{
+			Reporter.log("Test:"+name+"is passed ",true);
+		}
+		driver.quit();
+		
 	}
 }

@@ -1,10 +1,15 @@
+/*
+ * in the background result class will be running
+ */
 package generic;
 
+import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
+import org.testng.Reporter;
 
-public class Result implements ITestListener,IAutoConst{
+public class Result  implements ITestListener,IAutoConst{
 static int passCount=0,failCount=0;
 	@Override
 	public void onTestStart(ITestResult result) {
@@ -22,6 +27,8 @@ static int passCount=0,failCount=0;
 	public void onTestFailure(ITestResult result) {
 		// TODO Auto-generated method stub
 		failCount++;
+//		String P = Utility.getPhoto(driver, PHOTO_PATH);
+//		Reporter.log("photo:" +P,true);
 	}
 
 	@Override
