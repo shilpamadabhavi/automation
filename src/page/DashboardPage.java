@@ -5,10 +5,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class HomePage {
-@FindBy(id="logoutLink")
+public class DashboardPage {
+@FindBy(xpath="//a[text()='Logout']")
 private WebElement logoutBTN;
-public HomePage(WebDriver driver)
+public DashboardPage(WebDriver driver)
 {
 	PageFactory.initElements(driver, this);
 }

@@ -7,11 +7,11 @@ import org.openqa.selenium.support.PageFactory;
 
 public class LoginPage {
 	private WebDriver driver;
-@FindBy(id="username")
+@FindBy(id="txtUsername")
 private WebElement unTB;
-@FindBy(name="pwd")
+@FindBy(id="txtPassword")
 private WebElement pwTB;
-@FindBy(id="loginButtonContainer")
+@FindBy(name="Submit")
 private WebElement logBTN;
 public LoginPage(WebDriver driver)
 {

@@ -2,24 +2,21 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
     <line>
-      <![CDATA[testdemo2]]>
+      <![CDATA[Required page is displayed ]]>
     </line>
     <line>
-      <![CDATA[Test:demoAis passed ]]>
+      <![CDATA[Required page is displayed ]]>
+    </line>
+    <line>
+      <![CDATA[Test:testOrangeTC1is passed ]]>
     </line>
   </reporter-output>
-  <suite name="Default suite" duration-ms="25936" started-at="2018-10-01T06:12:14Z" finished-at="2018-10-01T06:12:40Z">
+  <suite name="Default suite" duration-ms="18461" started-at="2018-10-12T08:23:14Z" finished-at="2018-10-12T08:23:32Z">
     <groups>
-      <group name="smoke">
-        <method signature="TestLoginLogout.demoA()[pri:1, instance:script.TestLoginLogout@4667ae56]" name="demoA" class="script.TestLoginLogout"/>
-      </group> <!-- smoke -->
-      <group name="login">
-        <method signature="TestLoginLogout.demoA()[pri:1, instance:script.TestLoginLogout@4667ae56]" name="demoA" class="script.TestLoginLogout"/>
-      </group> <!-- login -->
     </groups>
-    <test name="Default test" duration-ms="25936" started-at="2018-10-01T06:12:14Z" finished-at="2018-10-01T06:12:40Z">
-      <class name="script.TestLoginLogout">
-        <test-method status="PASS" signature="openApplication(java.lang.String, java.lang.String)[pri:0, instance:script.TestLoginLogout@4667ae56]" name="openApplication" is-config="true" duration-ms="7008" started-at="2018-10-01T06:12:14Z" finished-at="2018-10-01T06:12:21Z">
+    <test name="Default test" duration-ms="18461" started-at="2018-10-12T08:23:14Z" finished-at="2018-10-12T08:23:32Z">
+      <class name="script.OrangeTC1">
+        <test-method status="PASS" signature="openApplication(java.lang.String, java.lang.String)[pri:0, instance:script.OrangeTC1@4667ae56]" name="openApplication" is-config="true" duration-ms="8880" started-at="2018-10-12T08:23:14Z" finished-at="2018-10-12T08:23:22Z">
           <params>
             <param index="0">
               <value>
@@ -35,28 +32,31 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openApplication -->
-        <test-method status="PASS" signature="demoA()[pri:1, instance:script.TestLoginLogout@4667ae56]" name="demoA" duration-ms="18066" started-at="2018-10-01T06:12:21Z" finished-at="2018-10-01T06:12:39Z">
+        <test-method status="PASS" signature="testOrangeTC1()[pri:0, instance:script.OrangeTC1@4667ae56]" name="testOrangeTC1" duration-ms="8752" started-at="2018-10-12T08:23:22Z" finished-at="2018-10-12T08:23:31Z">
           <reporter-output>
             <line>
-              <![CDATA[testdemo2]]>
+              <![CDATA[Required page is displayed ]]>
+            </line>
+            <line>
+              <![CDATA[Required page is displayed ]]>
             </line>
           </reporter-output>
-        </test-method> <!-- demoA -->
-        <test-method status="PASS" signature="closeApplication(org.testng.ITestResult)[pri:0, instance:script.TestLoginLogout@4667ae56]" name="closeApplication" is-config="true" duration-ms="812" started-at="2018-10-01T06:12:39Z" finished-at="2018-10-01T06:12:40Z">
+        </test-method> <!-- testOrangeTC1 -->
+        <test-method status="PASS" signature="closeApplication(org.testng.ITestResult)[pri:0, instance:script.OrangeTC1@4667ae56]" name="closeApplication" is-config="true" duration-ms="779" started-at="2018-10-12T08:23:31Z" finished-at="2018-10-12T08:23:32Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=demoA status=SUCCESS method=TestLoginLogout.demoA()[pri:1, instance:script.TestLoginLogout@4667ae56] output=testdemo2]]]>
+                <![CDATA[[TestResult name=testOrangeTC1 status=SUCCESS method=OrangeTC1.testOrangeTC1()[pri:0, instance:script.OrangeTC1@4667ae56] output=Required page is displayed ]]]>
               </value>
             </param>
           </params>
           <reporter-output>
             <line>
-              <![CDATA[Test:demoAis passed ]]>
+              <![CDATA[Test:testOrangeTC1is passed ]]>
             </line>
           </reporter-output>
         </test-method> <!-- closeApplication -->
-      </class> <!-- script.TestLoginLogout -->
+      </class> <!-- script.OrangeTC1 -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

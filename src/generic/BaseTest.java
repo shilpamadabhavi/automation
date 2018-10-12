@@ -18,14 +18,17 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
+
 @Listeners(Result.class)
 abstract public class BaseTest implements IAutoConst {
 //dont make driver as static it will not run multiple browser when we excecute through selenium 
 //grid
 	public WebDriver driver;
 	public String url=Utility.getPropertyValue(CONFIG_PATH, "URL");//dont make url as static bcz its keep changing
-	String ITO=Utility.getPropertyValue(CONFIG_PATH, "ITO");
-	public long duration=Long.parseLong(ITO);//dont make duration as static bcz its keep changing
+	String strITO=Utility.getPropertyValue(CONFIG_PATH, "ITO");
+	public long lngITO=Long.parseLong(strITO);//dont make duration as static bcz its keep changing
+	String strETO=Utility.getPropertyValue(CONFIG_PATH, "ETO");
+	public long lngETO=Long.parseLong(strETO);
 	static
 	{
 		System.setProperty(chrome_key,chrome_value);
@@ -37,7 +40,7 @@ public void openApplication(@Optional("localhost")String ip,@Optional( "chrome")
 {
 //	driver=new ChromeDriver();
 	driver=Utility.openBrowser(driver,ip ,browser);
-	driver.manage().timeouts().implicitlyWait(duration, TimeUnit.SECONDS);
+	driver.manage().timeouts().implicitlyWait(lngITO, TimeUnit.SECONDS);
 	driver.get(url);
 		
 	
